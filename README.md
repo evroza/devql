@@ -38,6 +38,12 @@ npm run dev
 
 The first time it may take a little while to generate the first `webpack-assets.json` and complain with a few dozen `[webpack-isomorphic-tools] (waiting for the first Webpack build to finish)` printouts, but be patient. Give it 30 seconds.
 
+```bash
+npm run build
+npm run start-prod-api
+npm run start-prod
+```
+
 ### Using Redux DevTools
 
 [Redux Devtools](https://github.com/gaearon/redux-devtools) are enabled by default in development.
