@@ -18,8 +18,6 @@
     "hot reloading",
     "react-hot-reloader",
     "redux",
-    "starter",
-    "boilerplate",
     "babel"
   ],
   "main": "bin/server.js",
@@ -138,7 +136,6 @@
     "socket.io-client": "^1.3.7",
     "superagent": "^1.4.0",
     "url-loader": "^0.5.7",
-    "violet-paginator": "^1.8.1",
     "warning": "^2.1.0",
     "webpack-isomorphic-tools": "^2.2.18"
   },
