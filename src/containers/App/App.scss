@@ -1,27 +1,54 @@
-.app {
+@mixin nav-nav-strap-shared() {
+  color: white;
+  background: #50E3C2;
+}
+:global(body) {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: 1.5em;
+  font-size: 20px;
   line-height: 1.4;
+  margin: 0px;
+}
+:global(#nav) {
+  background: #0078e7;
+  height: 60px;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  font-size: 18px;
+  @include nav-nav-strap-shared();
 
-  .brand {
-    position: absolute;
-    $size: 40px;
-    top: 5px;
-    left: 5px;
-    display: inline-block;
-    background: #2d2d2d url('../Home/logo.png') no-repeat center center;
-    width: $size;
-    height: $size;
-    background-size: 80%;
-    margin: 0 10px 0 0;
-    border-radius: $size / 2;
-
+  ul {
+    list-style: none;
+    padding: 0 15px;
+    float: right;
+    li {
+      display: inline-block;
+    }
   }
-  nav :global(.fa) {
-    font-size: 2em;
-    line-height: 20px;
+  a {
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.25s ease-out;
+    padding: 20px;
+    &:hover {
+      color: white;
+      box-shadow: inset 0px -4px 0px 0px white;
+      background: rgba(0,0,0,0.03);
+      outline: 0;
+    }
+    &:active{
+      outline: 0;
+    }
   }
 }
-.appContent {
-  margin: 50px 0; // for fixed navbar
+#nav_strap {
+  text-align: center;
+  position: relative;
+  margin-top: 78px;
+  @include nav-nav-strap-shared();
 }
+
+
+

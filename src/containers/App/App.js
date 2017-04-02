@@ -1,16 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { IndexLink } from 'react-router';
-import Navbar from 'react-bootstrap/lib/Navbar';
-import Nav from 'react-bootstrap/lib/Nav';
-import NavItem from 'react-bootstrap/lib/NavItem';
 import Helmet from 'react-helmet';
 import { isLoaded as isInfoLoaded, load as loadInfo } from 'redux/modules/info';
 import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/modules/auth';
-import { InfoBar } from 'components';
 import { push } from 'react-router-redux';
 import config from '../../config';
 import { asyncConnect } from 'redux-async-connect';
+
+import css from './App.scss';
+
 
 @asyncConnect([{
   promise: ({store: {dispatch, getState}}) => {
@@ -33,12 +31,7 @@ export default class App extends Component {
   static propTypes = {
     children: PropTypes.object.isRequired,
     user: PropTypes.object,
-    logout: PropTypes.func.isRequired,
     pushState: PropTypes.func.isRequired
-  };
-
-  static contextTypes = {
-    store: PropTypes.object.isRequired
   };
 
   componentWillReceiveProps(nextProps) {
@@ -51,51 +44,32 @@ export default class App extends Component {
     }
   }
 
-  handleLogout = (event) => {
-    event.preventDefault();
-    this.props.logout();
-  };
 
   render() {
     // const {user} = this.props;
-    const styles = require('./App.scss');
+    // const styles = require('./App.scss');
 
     return (
-      <div className={styles.app}>
+      <div >
         <Helmet {...config.app.head}/>
-        <Navbar fixedTop>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <IndexLink to="/" activeStyle={{color: '#33e0fe'}}>
-                <div className={styles.brand}/>
-                <span>{config.app.title}</span>
-              </IndexLink>
-            </Navbar.Brand>
-            <Navbar.Toggle/>
-          </Navbar.Header>
 
-          <Navbar.Collapse eventKey={0}>
+        <div id="header">
+          <div id="nav">
+            <ul>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Email</a></li>
+            </ul>
+          </div>
+          <div id={css.nav_strap}>
+            <h1>DevQL</h1>
+          </div>
+        </div>
 
-            <Nav navbar pullRight>
-              <NavItem eventKey={1} target="_blank" title="View on Github" href="https://github.com/evroza">
-                <i className="fa fa-github"/>
-              </NavItem>
-            </Nav>
-
-          </Navbar.Collapse>
-        </Navbar>
-
-        <div className={styles.appContent}>
+        <div >
           {this.props.children}
         </div>
-        <InfoBar/>
 
-        <div className="well text-center">
-          Have questions? Ask for help <a
-          href="https://github.com/evroza"
-          target="_blank">on Github</a> or in the <a
-          href="https://discord.gg/0ZcbPKXt5bZZb1Ko" target="_blank">#react-redux-universal</a> Discord channel.
-        </div>
+
       </div>
     );
   }
