@@ -58,6 +58,10 @@ p {
   }
 }
 
+
+/**
+    Media queries
+ */
 @media screen and(max-width: 600px) {
     .bio_row{
       display: block;
@@ -70,7 +74,9 @@ p {
       }
     }
 }
-.container {
-  margin: 2em;
-}
+
+/**
+    End Media queries
+ */
+
 

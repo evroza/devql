@@ -7,3 +7,4 @@
 
 
 export Bio from './Bio/Bio';
+export SocialLinks from './SocialLinks/Social';

@@ -7,6 +7,8 @@ import { push } from 'react-router-redux';
 import config from '../../config';
 import { asyncConnect } from 'redux-async-connect';
 
+import { SocialLinks } from '../../components';
+
 import css from './App.scss';
 
 
@@ -64,6 +66,7 @@ export default class App extends Component {
             <h1>DevQL</h1>
           </div>
         </div>
+        <SocialLinks />
 
         <div >
           {this.props.children}
