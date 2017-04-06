@@ -7,6 +7,7 @@ import {mapUrl} from 'utils/url.js';
 import PrettyError from 'pretty-error';
 import http from 'http';
 import SocketIo from 'socket.io';
+import SendMail from './utils/sendMail';
 
 const pretty = new PrettyError();
 const app = express();
@@ -84,7 +85,18 @@ if (config.apiPort) {
       messageIndex++;
       io.emit('msg', data);
     });
+
+    socket.on('contact', (data) => {
+      data.id = messageIndex;
+      console.log(data);
+      //TODO: Send mail here
+      SendMail(data);
+
+      messageIndex++;
+      io.emit('msg', data);
+    });
   });
+
   io.listen(runnable);
 } else {
   console.error('==>     ERROR: No PORT environment variable has been specified');
