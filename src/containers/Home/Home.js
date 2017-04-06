@@ -9,8 +9,8 @@ export default class Home extends Component {
     // const styles = require('./Home.scss');
     // require the logo image both from client and server
     // const profImage = require('./logo.png');
-    let tinker1 = "{'Tinkered before': [('Node', 'React', 'Angular'), ('Python', 'Flask', 'Django'), ('Asp.Net', 'Asp.Net Core'), ('Php', 'Zend', 'CodeIgniter')]}";
-    let tinker2 = "{'Currently tinkering': ['Software Defined Networking', 'OpenFlow', 'Hadoop', 'Java']}";
+    const tinker1 = "{'Tinkered before': [('Node', 'React', 'Angular'), ('Python', 'Flask', 'Django'), ('Asp.Net', 'Asp.Net Core'), ('Php', 'Zend', 'CodeIgniter')]}";
+    const tinker2 = "{'Currently tinkering': ['Software Defined Networking', 'OpenFlow', 'Hadoop', 'Java']}";
     return (
       <div className={css.home}>
         <Helmet title="Home"/>

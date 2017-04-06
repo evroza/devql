@@ -6,6 +6,7 @@ import { isLoaded as isAuthLoaded, load as loadAuth, logout } from 'redux/module
 import { push } from 'react-router-redux';
 import config from '../../config';
 import { asyncConnect } from 'redux-async-connect';
+import { Link } from 'react-router';
 
 import { SocialLinks } from '../../components';
 
@@ -58,8 +59,8 @@ export default class App extends Component {
         <div id="header">
           <div id="nav">
             <ul>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Email</a></li>
+              <li><Link to="/Contact" onlyActiveOnIndex>Contact</Link></li>
+              <li><a href="mailto:rutohevans@gmail.com" target="_blank">Email</a></li>
             </ul>
           </div>
           <div id={css.nav_strap}>

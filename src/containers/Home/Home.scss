@@ -76,13 +76,22 @@ p {
         width: 100%;
       }
     }
+    #bio {
+      blockquote {
+        margin: 0;
+        padding: 0 0 0 0.8em;
+        border-left: 0.03em solid #50E3C2;
+      }
+    }
 }
-.container {
-  margin: 2em;
-}
-
 /**
     End Media queries
  */
+.container {
+  margin: .5em 2em 2em 2em;
+  position: relative;
+  top: -.5em;
+}
+
 
 
