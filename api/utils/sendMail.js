@@ -2,7 +2,7 @@
  * Created by Evans R. on 4/7/2017.
  */
 const nodemailer = require('nodemailer');
-const configs = require("../../configSecret.json")
+const configs = require("../../configSecret.json");
 
 // create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
@@ -29,7 +29,7 @@ ${data.message}
 
 ======================================================================================`, // plain text body
     html: `
-<h4>Hello ✔ - Query received via DevQL</h4>
+<h3>Hello ✔ - Query received via DevQL</h3>
 <p>You can also login at www.devql.com to read the message. <br /><code>Welcome home Dev</code></p>
 <br/>
 <p>======================================================================================</p>
