@@ -35,7 +35,7 @@ export default class Contact extends Component {
   }
 
   handleSubmit(values) {
-    console.log(values);
+    // Submit to server via socket.io
     if (socket) {
       socket.emit('contact', { ...values });
     }
@@ -46,9 +46,12 @@ export default class Contact extends Component {
       <div className={css.contact}>
         <Helmet title="Contact"/>
         <div className={css.container}>
-          <Link to="/" onlyActiveOnIndex> Back </Link>
-
-          <ContactForm onSubmit={this.handleSubmit} />
+          <div className={css.link_back}>
+            <Link to="/" onlyActiveOnIndex> Back </Link>
+          </div>
+          <div className={css.container_form_center}>
+            <ContactForm onSubmit={this.handleSubmit} />
+          </div>
         </div>
       </div>
     );
