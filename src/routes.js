@@ -5,7 +5,7 @@ import {
     Contact,
     Home,
     NotFound,
-  } from 'containers';
+  } from './containers';
 
 export default () => {
   /**

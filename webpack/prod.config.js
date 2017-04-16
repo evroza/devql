@@ -17,6 +17,7 @@ var webpackIsomorphicToolsPlugin = new WebpackIsomorphicToolsPlugin(require('./w
 module.exports = {
   devtool: 'source-map',
   context: path.resolve(__dirname, '..'),
+  root: path.resolve(__dirname, '..'),
   entry: {
     'main': [
       './src/client.js'
@@ -44,6 +45,7 @@ module.exports = {
   },
   progress: true,
   resolve: {
+    root: path.resolve(__dirname, '..'),
     modulesDirectories: [
       'src',
       'node_modules'

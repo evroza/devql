@@ -3,7 +3,7 @@ import session from 'express-session';
 import bodyParser from 'body-parser';
 import config from '../src/config';
 import * as actions from './actions/index';
-import {mapUrl} from 'utils/url.js';
+import {mapUrl} from './utils/url.js';
 import PrettyError from 'pretty-error';
 import http from 'http';
 import SocketIo from 'socket.io';
@@ -67,7 +67,7 @@ if (config.apiPort) {
   });
 
   io.on('connection', (socket) => {
-    socket.emit('news', {msg: `'Hello World!' from server`});
+    // socket.emit('news', {msg: `'Hello World!' from server`});
 
     socket.on('history', () => {
       for (let index = 0; index < bufferSize; index++) {
@@ -89,7 +89,9 @@ if (config.apiPort) {
     socket.on('contact', (data) => {
       data.id = messageIndex;
       console.log(data);
-      //TODO: Send mail here
+
+      // TODO: Must log message first before sending just incase sending fails
+
       SendMail(data);
 
       messageIndex++;
