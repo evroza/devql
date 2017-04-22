@@ -23,7 +23,7 @@ module.exports = Object.assign({
         {name: 'description', content: 'My hangout.'},
         {charset: 'utf-8'},
         {property: 'og:site_name', content: 'A Software Engineer'},
-        {property: 'og:image', content: 'https://react-redux.herokuapp.com/logo.jpg'},
+        {property: 'og:image', content: '/logo.jpg'},
         {property: 'og:locale', content: 'en_US'},
         {property: 'og:title', content: 'A Software Engineer..'},
         {property: 'og:description', content: 'A Software Engineer.'},
